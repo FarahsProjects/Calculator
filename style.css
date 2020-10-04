@@ -1,27 +1,30 @@
-body{
+body {
+	font-style: oblique;
+	background-color: lightblue;
 	text-align: center;
-    margin: 5px,10px,5px,10px;
-	background-color: black
-	font-family: "Lucida Console", Courier, monospace;
-	font-size: 25px
-}   
 
-#container{
-	
-	height: 1000px
-	width: 550px
-	background-image: url(Users\farah\Desktop\calc.jpg);
-	margin: 20px auto;
 }
 
-#calculator{
-	width: 320px
-	height: 520px
-	background-color: #C14242;
+#container {
+  width:1000px;
+  height: 550px;
+  margin: 20px auto;
+  background-color: grey;
+}
+
+#calculator {
+	width: 320px;
+	height: 520px;
+	background-color: white;
 	margin: 0 auto;
-	top:20px;
 	position: relative;
-	border-radius: 5px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.1);
+	top: 20px;
 }
 
+
+#output {
+	background-color: yellow;
+	width:320px;
+	height: 50px
+}
+}
