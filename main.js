@@ -1,153 +1,3 @@
-// function getHistory(){
-//     return document.getElementById("history-value").innerText;
-// }
-// function printHistory(num){
-//     document.getElementById("history-value").innerText=num;
-// }
-// function getOutput(){
-//     return document.getElementById("output-value").innerText;
-// }
-// function printOutput(num){
-//     if(num==""){
-//         document.getElementById("output-value").innerText=num;
-//     }
-//     else{
-//         document.getElementById("output-value").innerText=getFormattedNumber(num);
-//     }   
-// }
-// function getFormattedNumber(num){
-//     if(num=="-"){
-//         return "";
-//     }
-//     var n = Number(num);
-//     var value = n.toLocaleString("en");
-//     return value;
-// }
-// function reverseNumberFormat(num){
-//     return Number(num.replace(/,/g,''));
-// }
-// var operator = document.getElementsByClassName("operator");
-// for(var i =0;i<operator.length;i++){
-//     operator[i].addEventListener('click',function(){
-//         if(this.id=="clear"){
-//             printHistory("");
-//             printOutput("");
-//         }
-      
-//         else{
-//             var output=getOutput();
-//             var history=getHistory();
-//             if(output==""&&history!=""){
-//                 if(isNaN(history[history.length-1])){
-//                     history= history.substr(0,history.length-1);
-//                 }
-//             }
-//             if(output!="" || history!=""){
-//                 output= output==""?output:reverseNumberFormat(output);
-//                 history=history+output;
-//                 if(this.id=="="){
-//                     var result=eval(history);
-//                     printOutput(result);
-//                     printHistory("");
-//                 }
-//                 else{
-//                     history=history+this.id;
-//                     printHistory(history);
-//                     printOutput("");
-//                 }
-//             }
-//         }
-        
-//     });
-// }
-// var number = document.getElementsByClassName("number");
-// for(var i =0;i<number.length;i++){
-//     number[i].addEventListener('click',function(){
-//         var output=reverseNumberFormat(getOutput());
-//         if(output!=NaN){ //if output is a number
-//             output=output+this.id;
-//             printOutput(output);
-//         }
-//     });
-// }
-
-// the initial value fot the screen output = 0;
-    // first we need to put all clicked items into history
-    //then if we click = it will evaluate the quation stored the history
-    //if we press C it will empty both history and screen out put and set output value to Zero
-    //if we click the number twice it will print it as much as we click on it
-    // the calculator will only perform one quation and its not acumulative
-    // if we have 1+2 =3 .. we can't put 3+4 =7 we need to input 3 from the beggining
-    // the calculator will only process numbers from 6 digits.
-
-//The initial value diplayed will be zero.
-
-
-//  var history = $("#output-value")
-//  $("#output-value").append(history)
- 
- 
-//  // ("button").onclick =function displayToScreen(){
-//  //    var history = document.getElementsByTagName("button").innerHTML;
-//  // console.log(history) 
-//  // }
-// var array = []
-// array = $(".number").text()
-// console.log(array)
-// var test = $(".number").text()
-// console.log(test)// they are not an array!!!
-
-  
-
-
-
-
-//  var initialDisplay = 0;  
-//  $(document).ready(function(){
-//     $(".number1").click(function(){
-//      $("#output-value").text($(".number1").text())
-//     })
-//     $(".number2").click(function(){
-//      $("#output-value").text($(".number2").text())
-//     })
-//     $(".number3").click(function(){
-//      $("#output-value").text($(".number3").text())
-//     })
-//       $(".number4").click(function(){
-//      $("#output-value").text($(".number4").text())
-//     })
-//     $(".number5").click(function(){
-//      $("#output-value").text($(".number5").text())
-//     })
-//     $(".number6").click(function(){
-//      $("#output-value").text($(".number6").text())
-//     })
-//     $(".number7").click(function(){
-//      $("#output-value").text($(".number7").text())
-//     })
-//     $(".number8").click(function(){
-//      $("#output-value").text($(".number8").text())
-//     })
-//     $(".number9").click(function(){
-//      $("#output-value").text($(".number9").text())
-//     })
-
-  
-// $(".number").each(function(i, num){
-//     $(this).click(function(e){
-//         if(initialDisplay == "0")
-//             initialDisplay = "";
-
-//         if($(this).text() == "C"){
-//             initialDisplay = "0";
-//             $("#output-value").text(initialDisplay);
-//         }
-//     })
-// })
-
-//     })
-
-
 var result=[];
     var num1;
     var num2;
@@ -288,3 +138,33 @@ var result=[];
             }
         });
     });
+=======
+// //Adding button’s value when the screen is pressed.
+// Implementing backspace for input.
+// Clear expression screen (AC)
+// $(document).ready(function(){
+// })
+function getOutput(){
+	return document.getElementById("output-value").innerText;
+}
+function printOutput(num){
+	if(num==""){
+		document.getElementById("output-value").innerText=num;
+	}
+	else{
+		document.getElementById("output-value").innerText=getFormattedNumber(num);
+	}	
+}
+function getFormattedNumber(num){
+	if(num=="-"){
+		return "";
+	}
+	var n = Number(num);
+	var value = n.toLocaleString("en");
+	return value;
+}
+
+
+
+
+
