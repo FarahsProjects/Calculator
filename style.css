@@ -8,7 +8,7 @@ body {
 #calculator {
 	border: 1px solid grey;
 	width: 280px;
-	height: 400px;
+	height: 450px;
 	background-color: #e0e0d1;
 	margin: 0 auto;
 	position: relative;
@@ -71,28 +71,4 @@ h3 {
 	color: white;
 	border: black;
 }
-
-	background-color: lightblue;
-	text-align: center;
-}
-#container {
-  width:1000px;
-  height: 550px;
-  margin: 20px auto;
-  background-color: grey;
-}
-#calculator {
-	width: 320px;
-	height: 520px;
-	background-color: white;
-	margin: 0 auto;
-	position: relative;
-	top: 20px;
-}
-#output {
-	background-color: yellow;
-	width:320px;
-	height: 50px
-}
-
 

@@ -63,18 +63,8 @@ var result=[];
         $('#input').html(result);
         calculation();
     });
-    // $('#divide').on('click', function () {
-    //     empty();
-    //     result.push('/');
-    //     $('#input').html(result);
-    //     calculation();
-    // });
-    // $('#multiply').on('click', function () {
-    //     empty();
-    //     result.push('x');
-    //     $('#input').html(result);
-    //     calculation();
-    // });
+   
+   
 // (+,-,=,/,*)
  //do calculation and show result with mathematical operators  && isNaN(parseInt(result[result.length-1]))
     function calculation(){
@@ -96,12 +86,7 @@ var result=[];
                 if (element=="-") {
                     answer = (num1) - (num2);
                 }
-                // if (element=="x") {
-                //     answer = (num1) * (num2);
-                // }
-                // if (element=="/") {
-                //     answer = (num1) / (num2);
-                // }
+               
                 result[0]=answer; //155
                 $('#input').html(answer);
             }
@@ -127,18 +112,13 @@ var result=[];
                 if (element=="-") {
                     answer = (num1) - (num2);
                 }
-                // if (element=="x") {
-                //     answer = (num1) * (num2);
-                // }
-                // if (element=="/") {
-                //     answer = (num1) / (num2);
-                // }
+               
                 $('#input').html(answer);
                 result = [];
             }
         });
     });
-=======
+
 // //Adding button’s value when the screen is pressed.
 // Implementing backspace for input.
 // Clear expression screen (AC)
