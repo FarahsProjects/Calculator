@@ -3,12 +3,14 @@ body {
 	 background: linear-gradient(to right, black, grey);
 	text-align: center;
     background-image: url(toto.jpg);
+
+
 }
 
 #calculator {
 	border: 1px solid grey;
 	width: 280px;
-	height: 450px;
+	height: 400px;
 	background-color: #e0e0d1;
 	margin: 0 auto;
 	position: relative;
@@ -27,9 +29,10 @@ body {
 	background: orange;
 	width: 245px;
 	height: 60px;
-	border-radius: 12px
 	font-size: 100%;
+	border-radius: 12px
 }
+
 button {
 	width: 60px;
 	height:  60px;
@@ -53,12 +56,17 @@ h3 {
 
 }
 
-#minus, #plus, #equal {
+ #equal {
 	background-color: orange;
 	color: white;
 	border: orange;
 }
 
+.operator {
+	background-color: orange;
+	color: white;
+	border: orange;
+}
 
 .number {
 	background-color: black;
@@ -71,4 +79,5 @@ h3 {
 	color: white;
 	border: black;
 }
+
 

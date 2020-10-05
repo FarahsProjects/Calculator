@@ -2,83 +2,38 @@ var result=[];
     var num1;
     var num2;
     var answer;
+
+    //Clear output screen from all the inputs using splice.
     $('.clear').on('click', function () {
         result.splice(0);
         $('#input').empty();
     });
-     $('#1').on('click', function () {
-         result.push(1);
+
+    //Displaying the buttons(numbers) values on the output screen when clicked!
+    $('.number').on('click', function () {
+        if(result.length>6){ //this condition for not adding more than 6 digits on the output screen
+            alert("You exceeded the limit")
+        }
+         result.push(this.id);
          $('#input').html(result);
      });
-     $('#2').on('click', function () {
-         result.push(2);
-         $('#input').html(result);
-     });
-     $('#3').on('click', function () {
-        result.push(3);
-        $('#input').html(result);
-    });
-     $('#4').on('click', function () {
-        result.push(4);
-        $('#input').html(result);
-    });
-    $('#5').on('click', function () {
-         result.push(5);
-        $('#input').html(result);
-    });
-    $('#6').on('click', function () {
-        result.push(6);
-        $('#input').html(result);
-    });
-    $('#7').on('click', function () {
-         result.push(7);
-        $('#input').html(result);
-    });
-    $('#8').on('click', function () {
-         result.push(8);
-        $('#input').html(result);
-    });
-    $('#9').on('click', function () {
-         result.push(9);
-        $('#input').html(result);
-    });
-    $('#0').on('click', function () {
-         result.push(0);
-        $('#input').html(result);
-    });
-    $('#decimal').on('click', function () {
-        result.push('.');
-        $('#input').html(result);
-    });
-    //click on calc signs and process calculation
-    $('#plus').on('click', function () {
+
+
+    //Displaying buttons (operators) values on output screen & invoking the calculation function.
+      $('.operator').on('click', function () {
         empty();
-        result.push('+');
-        $('#input').html(result);
-        calculation();
-    });
-    $('#minus').on('click', function () {
-        empty();
-        result.push('-');
+        result.push(this.id);
         $('#input').html(result);
         calculation();
     });
    
-   
-// (+,-,=,/,*)
- //do calculation and show result with mathematical operators  && isNaN(parseInt(result[result.length-1]))
+    //Evaluating mathmatical equations that are stored inside the result array. 
     function calculation(){
-               //3  +   4 =7
-               // false && true
-
-
-        result.forEach(function(element,index,array){
-            console.log(result);
-            //check if 2 cal sign exist in the array
-            //result = [3, "+", 5]
-            if (isNaN(parseInt(element)) && element != "." && index != result.length-1) {
-                  //splice will take a part from the array and return it into a new one.
-                // join will invert the array into a string eg array [4,5] --> "45"
+       result.forEach(function(element,index,array){ //[2, 2, "+", 1]
+            //isNaN(parseInt(element)) will evaluate true when element = operator (+, -)
+            if (isNaN(parseInt(element)) && index != result.length-1) { // [num1, operator, num2] //whenever he sees an operator he will sign in to the condition
+                num1 = result.splice(0,index).join(""); //  [num1] --> [22] whenever he sees an operator he will take whats before it
+                num2 = result.splice(1, result.length-2).join("");  //num2 --> [1] //everything after the operator!
               
                 if (element=="+") {
                     answer = parseFloat(num1) + parseFloat(num2);
@@ -86,65 +41,36 @@ var result=[];
                 if (element=="-") {
                     answer = (num1) - (num2);
                 }
-               
-                result[0]=answer; //155
+           
+                result[0]=answer; 
                 $('#input').html(answer);
             }
         });
     }
-    //to check if anything exists in result, and if anything exists in answer
+    //To check if anything exists in result, and if anything exists in answer
     function empty(){
             if (parseFloat(answer)!= 0 && result.length == 0) {
                 result[0] = answer;
             }
     }
-    //do calculation with equal sign
+    //do calculation with equal operator
     $('#equal').on('click', function(){
         result.forEach(function(element,index,array){
-            if (isNaN(parseInt(element)) && element != ".") {
+            if (isNaN(parseInt(element))) {
                 num1 = result.splice(0,index).join("");
                 num2 = result.splice(1).join("");
-                console.log(num1)
-                console.log(num2)
+               
                 if (element=="+") {
                     answer = parseFloat(num1) + parseFloat(num2);
                 }
                 if (element=="-") {
                     answer = (num1) - (num2);
                 }
-               
+           
                 $('#input').html(answer);
                 result = [];
             }
         });
     });
-
-// //Adding button’s value when the screen is pressed.
-// Implementing backspace for input.
-// Clear expression screen (AC)
-// $(document).ready(function(){
-// })
-function getOutput(){
-	return document.getElementById("output-value").innerText;
-}
-function printOutput(num){
-	if(num==""){
-		document.getElementById("output-value").innerText=num;
-	}
-	else{
-		document.getElementById("output-value").innerText=getFormattedNumber(num);
-	}	
-}
-function getFormattedNumber(num){
-	if(num=="-"){
-		return "";
-	}
-	var n = Number(num);
-	var value = n.toLocaleString("en");
-	return value;
-}
-
-
-
 
 
